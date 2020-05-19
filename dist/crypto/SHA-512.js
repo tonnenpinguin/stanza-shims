@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 /**
  * This file is derived from prior work.
  *
@@ -9,10 +9,10 @@
  * - cipher-base, Copyright (c) 2017 crypto-browserify contributors
  * - sha.js, Copyright (c) 2013-2018 sha.js contributors
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-const tslib_1 = require("tslib");
+Object.defineProperty(exports, '__esModule', { value: true });
+const tslib_1 = require('tslib');
 // tslint:disable no-bitwise
-const Hash_1 = tslib_1.__importDefault(require("./Hash"));
+const Hash_1 = tslib_1.__importDefault(require('./Hash'));
 const K = [
     0x428a2f98,
     0xd728ae22,
@@ -173,7 +173,7 @@ const K = [
     0x5fcb6fab,
     0x3ad6faec,
     0x6c44198c,
-    0x4a475817
+    0x4a475817,
 ];
 function Ch(x, y, z) {
     return z ^ (x & (y ^ z));

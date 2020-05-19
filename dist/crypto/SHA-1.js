@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 /**
  * This file is derived from prior work.
  *
@@ -9,8 +9,8 @@
  * - cipher-base, Copyright (c) 2017 crypto-browserify contributors
  * - sha.js, Copyright (c) 2013-2018 sha.js contributors
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-const tslib_1 = require("tslib");
+Object.defineProperty(exports, '__esModule', { value: true });
+const tslib_1 = require('tslib');
 /*
  * A JavaScript implementation of the Secure Hash Algorithm, SHA-1, as defined
  * in FIPS PUB 180-1
@@ -20,7 +20,7 @@ const tslib_1 = require("tslib");
  * See http://pajhome.org.uk/crypt/md5 for details.
  */
 // tslint:disable no-bitwise
-const Hash_1 = tslib_1.__importDefault(require("./Hash"));
+const Hash_1 = tslib_1.__importDefault(require('./Hash'));
 const K = [0x5a827999, 0x6ed9eba1, 0x8f1bbcdc | 0, 0xca62c1d6 | 0];
 function rotl1(num) {
     return (num << 1) | (num >>> 31);

@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 /**
  * This file is derived from prior work.
  *
@@ -9,9 +9,9 @@
  * - cipher-base, Copyright (c) 2017 crypto-browserify contributors
  * - create-hash, Copyright (c) 2017 crypto-browserify contributors
  */
-Object.defineProperty(exports, "__esModule", { value: true });
+Object.defineProperty(exports, '__esModule', { value: true });
 // tslint:disable no-bitwise
-const readable_stream_1 = require("readable-stream");
+const readable_stream_1 = require('readable-stream');
 class Hash extends readable_stream_1.Transform {
     constructor(blockSize, finalSize, endian = 'be') {
         super();
@@ -25,8 +25,7 @@ class Hash extends readable_stream_1.Transform {
         let error = null;
         try {
             this.update(chunk, encoding);
-        }
-        catch (err) {
+        } catch (err) {
             error = err;
         }
         callback(error);
@@ -35,8 +34,7 @@ class Hash extends readable_stream_1.Transform {
         let error = null;
         try {
             this.push(this.digest());
-        }
-        catch (err) {
+        } catch (err) {
             error = err;
         }
         callback(error);
@@ -50,7 +48,7 @@ class Hash extends readable_stream_1.Transform {
         const blockSize = this._blockSize;
         const length = data.length;
         let accum = this._len;
-        for (let offset = 0; offset < length;) {
+        for (let offset = 0; offset < length; ) {
             const assigned = accum % blockSize;
             const remainder = Math.min(length - offset, blockSize - assigned);
             for (let i = 0; i < remainder; i++) {
@@ -80,20 +78,17 @@ class Hash extends readable_stream_1.Transform {
             if (this._bigEndian) {
                 this._block.writeUInt32BE(0, this._blockSize - 8);
                 this._block.writeUInt32BE(bits, this._blockSize - 4);
-            }
-            else {
+            } else {
                 this._block.writeUInt32LE(bits, this._blockSize - 8);
                 this._block.writeUInt32LE(0, this._blockSize - 4);
             }
-        }
-        else {
+        } else {
             const lowBits = (bits & 0xffffffff) >>> 0;
             const highBits = (bits - lowBits) / 0x100000000;
             if (this._bigEndian) {
                 this._block.writeUInt32BE(highBits, this._blockSize - 8);
                 this._block.writeUInt32BE(lowBits, this._blockSize - 4);
-            }
-            else {
+            } else {
                 this._block.writeUInt32LE(lowBits, this._blockSize - 8);
                 this._block.writeUInt32LE(highBits, this._blockSize - 4);
             }
@@ -102,7 +97,7 @@ class Hash extends readable_stream_1.Transform {
         const hash = this._hash();
         return enc ? hash.toString(enc) : hash;
     }
-    _update(block) {
+    _update(_block) {
         throw new Error('_update must be implemented by subclass');
     }
     _hash() {

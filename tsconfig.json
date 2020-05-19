@@ -6,13 +6,18 @@
         "esModuleInterop": true,
         "forceConsistentCasingInFileNames": true,
         "importHelpers": true,
-        "lib": ["dom", "es2018"],
+        "lib": ["dom", "es2020"],
         "module": "commonjs",
         "moduleResolution": "node",
         "outDir": "./dist",
         "strict": true,
-        "target": "es2018"
+        "target": "es2020",
+        "noImplicitAny": true,
+        "noUnusedParameters": true,
+        "strictFunctionTypes": true,
+        "alwaysStrict": true,
+        "baseUrl": "./",
+        "skipLibCheck": true
     },
-    "include": ["src", "typings"],
-    "exclude": ["dist"]
+    "exclude": ["dist", "node_modules"]
 }

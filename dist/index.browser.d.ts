@@ -20,5 +20,5 @@ export {
     Hmac,
     nativeFetch as fetch,
     nativeWS as WebSocket,
-    nativeRTCPeerConnection as RTCPeerConnection
+    nativeRTCPeerConnection as RTCPeerConnection,
 };

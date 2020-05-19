@@ -132,7 +132,7 @@ export default abstract class Hash extends Transform {
         return enc ? hash.toString(enc) : hash;
     }
 
-    public _update(block: Buffer | Uint8Array): void {
+    public _update(_block: Buffer | Uint8Array): void {
         throw new Error('_update must be implemented by subclass');
     }
 

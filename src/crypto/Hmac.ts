@@ -36,9 +36,7 @@ export default class Hmac extends Transform {
 
         this._alg = alg;
         if (key.length > blocksize) {
-            key = createHash(alg)
-                .update(key)
-                .digest();
+            key = createHash(alg).update(key).digest();
         } else if (key.length < blocksize) {
             key = Buffer.concat([key, ZEROS], blocksize);
         }
@@ -78,10 +76,7 @@ export default class Hmac extends Transform {
 
     public _final() {
         const h = this._hash.digest();
-        return createHash(this._alg)
-            .update(this._opad)
-            .update(h)
-            .digest();
+        return createHash(this._alg).update(this._opad).update(h).digest();
     }
 
     public update(data: Buffer | string, inputEnc?: string): this {

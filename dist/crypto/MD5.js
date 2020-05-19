@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 /**
  * This file is derived from prior work.
  *
@@ -9,10 +9,10 @@
  * - cipher-base, Copyright (c) 2017 crypto-browserify contributors
  * - md5.js, Copyright (c) 2016 Kirill Fomichev
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-const tslib_1 = require("tslib");
+Object.defineProperty(exports, '__esModule', { value: true });
+const tslib_1 = require('tslib');
 // tslint:disable no-bitwise arguments-order
-const Hash_1 = tslib_1.__importDefault(require("./Hash"));
+const Hash_1 = tslib_1.__importDefault(require('./Hash'));
 function rotl(x, n) {
     return (x << n) | (x >>> (32 - n));
 }

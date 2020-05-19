@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 /**
  * This file is derived from prior work.
  *
@@ -9,8 +9,8 @@
  * - cipher-base, Copyright (c) 2017 crypto-browserify contributors
  * - sha.js, Copyright (c) 2013-2018 sha.js contributors
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-const tslib_1 = require("tslib");
+Object.defineProperty(exports, '__esModule', { value: true });
+const tslib_1 = require('tslib');
 /**
  * A JavaScript implementation of the Secure Hash Algorithm, SHA-256, as defined
  * in FIPS 180-2
@@ -19,7 +19,7 @@ const tslib_1 = require("tslib");
  *
  */
 // tslint:disable no-bitwise
-const Hash_1 = tslib_1.__importDefault(require("./Hash"));
+const Hash_1 = tslib_1.__importDefault(require('./Hash'));
 const K = [
     0x428a2f98,
     0x71374491,
@@ -84,7 +84,7 @@ const K = [
     0x90befffa,
     0xa4506ceb,
     0xbef9a3f7,
-    0xc67178f2
+    0xc67178f2,
 ];
 function ch(x, y, z) {
     return z ^ (x & (y ^ z));

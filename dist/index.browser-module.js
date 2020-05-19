@@ -95,7 +95,7 @@ class Hash extends Transform {
         const hash = this._hash();
         return enc ? hash.toString(enc) : hash;
     }
-    _update(block) {
+    _update(_block) {
         throw new Error('_update must be implemented by subclass');
     }
     _hash() {
@@ -378,7 +378,7 @@ const K$1 = [
     0x90befffa,
     0xa4506ceb,
     0xbef9a3f7,
-    0xc67178f2
+    0xc67178f2,
 ];
 function ch(x, y, z) {
     return z ^ (x & (y ^ z));
@@ -633,7 +633,7 @@ const K$2 = [
     0x5fcb6fab,
     0x3ad6faec,
     0x6c44198c,
-    0x4a475817
+    0x4a475817,
 ];
 function Ch(x, y, z) {
     return z ^ (x & (y ^ z));
@@ -815,7 +815,7 @@ const HASH_IMPLEMENTATIONS = new Map([
     ['sha-512', Sha512],
     ['sha1', Sha1],
     ['sha256', Sha256],
-    ['sha512', Sha512]
+    ['sha512', Sha512],
 ]);
 function createHash(alg) {
     alg = alg.toLowerCase();
@@ -849,9 +849,7 @@ class Hmac extends Transform {
         const blocksize = alg === 'sha512' ? 128 : 64;
         this._alg = alg;
         if (key.length > blocksize) {
-            key = createHash(alg)
-                .update(key)
-                .digest();
+            key = createHash(alg).update(key).digest();
         } else if (key.length < blocksize) {
             key = Buffer.concat([key, ZEROS], blocksize);
         }
@@ -884,10 +882,7 @@ class Hmac extends Transform {
     }
     _final() {
         const h = this._hash.digest();
-        return createHash(this._alg)
-            .update(this._opad)
-            .update(h)
-            .digest();
+        return createHash(this._alg).update(this._opad).update(h).digest();
     }
     update(data, inputEnc) {
         this._hash.update(data, inputEnc);
@@ -934,5 +929,5 @@ export {
     createHmac,
     nativeFetch as fetch,
     getHashes,
-    randomBytes
+    randomBytes,
 };

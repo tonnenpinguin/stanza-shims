@@ -1,13 +1,24 @@
 'use strict';
 Object.defineProperty(exports, '__esModule', { value: true });
+exports.WebSocket = exports.RTCPeerConnection = exports.Hmac = exports.Hash = exports.fetch = exports.randomBytes = exports.createHmac = exports.createHash = exports.getHashes = void 0;
 const tslib_1 = require('tslib');
 const node_fetch_1 = tslib_1.__importDefault(require('node-fetch'));
 exports.fetch = node_fetch_1.default;
 const ws_1 = tslib_1.__importDefault(require('ws'));
 exports.WebSocket = ws_1.default;
 const crypto_1 = require('crypto');
-exports.Hash = crypto_1.Hash;
-exports.Hmac = crypto_1.Hmac;
+Object.defineProperty(exports, 'Hash', {
+    enumerable: true,
+    get: function () {
+        return crypto_1.Hash;
+    },
+});
+Object.defineProperty(exports, 'Hmac', {
+    enumerable: true,
+    get: function () {
+        return crypto_1.Hmac;
+    },
+});
 const ianaNames = new Map([
     ['md2', 'md2'],
     ['md5', 'md5'],
@@ -15,7 +26,7 @@ const ianaNames = new Map([
     ['sha-224', 'sha224'],
     ['sha-256', 'sha256'],
     ['sha-384', 'sha384'],
-    ['sha-512', 'sha512']
+    ['sha-512', 'sha512'],
 ]);
 function getHashes() {
     return ['sha-1', 'sha-256', 'sha-384', 'sha-512', 'md5'];

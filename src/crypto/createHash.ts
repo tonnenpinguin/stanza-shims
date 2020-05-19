@@ -11,7 +11,7 @@ const HASH_IMPLEMENTATIONS = new Map<string, any>([
     ['sha-512', SHA512],
     ['sha1', SHA1],
     ['sha256', SHA256],
-    ['sha512', SHA512]
+    ['sha512', SHA512],
 ]);
 
 export { Hash };

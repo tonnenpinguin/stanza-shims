@@ -5,7 +5,7 @@ import {
     createHmac as nodeCreateHmac,
     randomBytes as nodeRandomBytes,
     Hash,
-    Hmac
+    Hmac,
 } from 'crypto';
 
 const ianaNames = new Map([
@@ -15,7 +15,7 @@ const ianaNames = new Map([
     ['sha-224', 'sha224'],
     ['sha-256', 'sha256'],
     ['sha-384', 'sha384'],
-    ['sha-512', 'sha512']
+    ['sha-512', 'sha512'],
 ]);
 
 export function getHashes() {

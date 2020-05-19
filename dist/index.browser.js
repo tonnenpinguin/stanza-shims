@@ -1,9 +1,15 @@
 'use strict';
 Object.defineProperty(exports, '__esModule', { value: true });
+exports.RTCPeerConnection = exports.WebSocket = exports.fetch = exports.Hmac = exports.Hash = exports.createHash = exports.createHmac = exports.getHashes = exports.randomBytes = void 0;
 const tslib_1 = require('tslib');
 const createHash_1 = tslib_1.__importStar(require('./crypto/createHash'));
 exports.createHash = createHash_1.default;
-exports.Hash = createHash_1.Hash;
+Object.defineProperty(exports, 'Hash', {
+    enumerable: true,
+    get: function () {
+        return createHash_1.Hash;
+    },
+});
 const Hmac_1 = tslib_1.__importDefault(require('./crypto/Hmac'));
 exports.Hmac = Hmac_1.default;
 let root;

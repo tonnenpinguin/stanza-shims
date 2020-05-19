@@ -17,11 +17,15 @@ export default abstract class Hash extends Transform {
     protected _bigEndian: boolean;
     protected _len: number;
     constructor(blockSize: number, finalSize: number, endian?: string);
-    _transform(chunk: Buffer | string, encoding: string | undefined, callback: (err?: Error) => void): void;
+    _transform(
+        chunk: Buffer | string,
+        encoding: string | undefined,
+        callback: (err?: Error) => void
+    ): void;
     _flush(callback: (err?: Error) => void): void;
     update(data: Buffer | string | Uint8Array, enc?: BufferEncoding): this;
     digest(): Buffer;
     digest(enc: string): string;
-    _update(block: Buffer | Uint8Array): void;
+    _update(_block: Buffer | Uint8Array): void;
     _hash(): Buffer;
 }

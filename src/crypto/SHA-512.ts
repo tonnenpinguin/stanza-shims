@@ -173,7 +173,7 @@ const K = [
     0x5fcb6fab,
     0x3ad6faec,
     0x6c44198c,
-    0x4a475817
+    0x4a475817,
 ];
 
 function Ch(x: number, y: number, z: number) {
