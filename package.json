@@ -6,7 +6,7 @@
   "browser": "./dist/index.browser-module.js",
   "bugs": "https://github.com/legastero/stanza/issues",
   "dependencies": {
-    "react-native-randombytes": "^3.5.3",
+    "expo-random": "^8.1.0",
     "node-fetch": "^2.6.0",
     "readable-stream": "^3.6.0",
     "tslib": "^2.0.0",
